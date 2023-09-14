@@ -12,8 +12,8 @@ const initialFormData = {
   Study: "",
   StartDate: "",
   EndDate: "",
-  CurrentSalary: 1234,
-  Description: " Welcome",
+  CurrentSalary: "",
+  Description: " ",
 };
 
 

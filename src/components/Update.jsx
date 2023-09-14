@@ -63,14 +63,14 @@ const handleSubmit = async (e) => {
       }
     }
 
-    // Make the API request only if there are updated fields
+    
     if (Object.keys(updatedFields).length > 0) {
       const response = await axios.post(
         `https://sweede.app/DeliveryBoy/update-Employee/${id}`,
         updatedFields
       );
 
-      // Assuming updateUser is a Redux action that updates the user state
+    
       dispatch(updateUser(response.data));
 
       // Clear the form data after a successful update
@@ -83,11 +83,7 @@ const handleSubmit = async (e) => {
       console.log("No fields have changed.");
     }
 
-    // Assuming updateUser is a Redux action that updates the user state
-    //dispatch(updateUser(response.data));
-
-    // Clear the form data after a successful update
-    //setFormData(initialFormData);
+  
 
     // Navigate to the home page
     navigate("/");
@@ -120,6 +116,7 @@ const handleSubmit = async (e) => {
             value={formData.FirstName}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
           />
         </div>
 
@@ -133,6 +130,7 @@ const handleSubmit = async (e) => {
             value={formData.LastName}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
           />
         </div>
 
@@ -146,6 +144,7 @@ const handleSubmit = async (e) => {
             value={formData.DOB}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
           />
         </div>
 
@@ -159,6 +158,7 @@ const handleSubmit = async (e) => {
             value={formData.Study}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
           />
         </div>
 
@@ -172,6 +172,7 @@ const handleSubmit = async (e) => {
             value={formData.StartDate}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
           />
         </div>
 
@@ -185,6 +186,7 @@ const handleSubmit = async (e) => {
             value={formData.EndDate}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
           />
         </div>
 
@@ -198,6 +200,7 @@ const handleSubmit = async (e) => {
             value={formData.CurrentSalary}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
           />
         </div>
 
@@ -210,6 +213,7 @@ const handleSubmit = async (e) => {
             value={formData.Description}
             onChange={handleChange}
             className="px-3 py-2 border rounded-md w-full"
+            required
             rows="4"
           ></textarea>
         </div>
