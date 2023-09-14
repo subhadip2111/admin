@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import CreateUser from './components/Createuser';
+import DeleteUser from './components/DeleteUser';
+import Header from './components/Header';
+import Home from './components/Home';
+import Update from './components/Update';
 
+
+
+
+import {
+  createBrowserRouter,
+ 
+ 
+  Outlet,
+} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Outlet />
+
+      {/* <Navbar /> */}
+      <Home />
+    </>
   );
 }
 
+
+
+
+ export  const router = createBrowserRouter([
+   {
+     path: "/",
+     element: <App />,
+
+   },
+
+
+   {
+     path: "/createUser",
+     element: <CreateUser />,
+   },
+   {
+     path: "/updateuser/:id",
+     element: <Update />,
+   },
+
+   {
+     path: "/deleteuser/:id",
+     element: <DeleteUser />,
+   },
+  
+ ]);
+
 export default App;
+
